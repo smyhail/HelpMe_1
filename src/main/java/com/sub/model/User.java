@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-@NoArgsConstructor
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -20,24 +20,18 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String firstname;
-	private String lastname;
-	private Date startDate;
-	private String emailAddress;
-	private int age;
-	private int active;
+	private String name;
+	private String city;
+	private  Date startDate;
+	private boolean stat;
 
-
-
-	public User(String firstname, String lastname, Date startDate, String emailAddress, int age, int active) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.startDate = startDate;
-		this.emailAddress = emailAddress;
-		this.age = age;
-		this.active = active;
+	public User() {
 	}
 
-
-
+	public User(String name, String city, Date startDate, boolean stat) {
+		this.name = name;
+		this.city = city;
+		this.startDate = startDate;
+		this.stat = stat;
+	}
 }

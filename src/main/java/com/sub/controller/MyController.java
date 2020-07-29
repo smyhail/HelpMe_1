@@ -1,6 +1,7 @@
 package com.sub.controller;
 
 import com.sub.model.User;
+import com.sub.model.UserCount;
 import com.sub.model.UserName;
 import com.sub.repository.UserRepository;
 import com.sub.service.UserService;
@@ -21,23 +22,21 @@ public class MyController {
     @Autowired
     private UserService repoService;
 
-
-
-
-    @GetMapping("/")
+    @GetMapping("/") //1.it's work
     ResponseEntity<List<User>> getAllCity(Pageable page){
         return ResponseEntity.ok(repo.getAll());
     }
-    @GetMapping("/s")
+    @GetMapping("/s") //2.it's work
     ResponseEntity<List<User>> getAllUsers(Pageable page){
-        return ResponseEntity.ok(repo.findByFirstnameEndsWith("seba"));
+        return ResponseEntity.ok(repo.findByFirstnameEndsWith("Seba"));
     }
-
-
-    @GetMapping("/f")
+    @GetMapping("/f") ///3.don't work
     ResponseEntity<List<UserName> >getUsersName(Pageable page){
         return ResponseEntity.ok(repoService.getN());
-
+    }
+    @GetMapping("/c") ///4.don't work
+    ResponseEntity<List<UserCount> >getUsersCount(Pageable page){
+        return ResponseEntity.ok(repoService.getC());
     }
 
 

@@ -30,33 +30,25 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		userRepository.save(new User("seba", "u",new Date(),"sas@cdsd", 39,1));
-		userRepository.save(new User("eryk", "ubh",new Date(),"sasdvsd@cdsd", 11,1));
+		userRepository.save(new User("Seba", "Lodz",new Date(),true));
+		userRepository.save(new User("Eryk", "Lodz",new Date(),true));
+		userRepository.save(new User("Anna", "Lodz",new Date(),true));
+		userRepository.save(new User("John", "Lodz",new Date(),false));
+		userRepository.save(new User("Aldwin","Roma",new Date(),true));
+		userRepository.save(new User("Garfield","London",new Date(),false));
+		userRepository.save(new User("Michale","Paris",new Date(),false));
+		userRepository.save(new User("Lorna","London",new Date(), true));
+		userRepository.save(new User("Nicola","Berlin",new Date(),false));
+		userRepository.save(new User("Cleveland","London",new Date(),false));
+		userRepository.save(new User("Worthy","Paris",new Date(),true));
+		userRepository.save(new User("Noelyn","Roma",new Date(),true));
+		userRepository.save(new User("Adora","Madrid",new Date(),true));
+		userRepository.save(new User("Tiff","Paris",new Date(), true));
+		userRepository.save(new User("Dodie","London",new Date(),false));
+		userRepository.save(new User("Bride","Roma",new Date(),true));
+		userRepository.save(new User("Helli","Berlin",new Date(), true));
+		userRepository.save(new User("Rudolfo","Roma",new Date(),true));
 
 
-		/**
-		User user = new User();
-		user.setActive(1);
-		user.setAge(28);
-		user.setEmailAddress("ramesh24@gmail.com");
-		user.setFirstname("Ramesh");
-		user.setLastname("Fadatare");
-		user.setStartDate(new Date());
-		user = userRepository.save(user);
-
-		//System.out.println("-------------------------------------:: " + user.getId());
-		
-		System.out.println(" ---------------@Query ---------------------");
-		System.out.println("--------------findByEmailAddress -----------------");
-		
-		User user2 = userRepository.findByEmailAddress("sas@cdsd");
-		System.out.println(user2.toString());
-		
-		System.out.println(" ---------------@Query ---------------------");
-		System.out.println("--------------findByLastname -----------------");
-		
-		List<User> user3 = userRepository.findByFirstnameEndsWith("seba");
-		System.out.println(user3.get(0).toString());
-		 */
 	}
 }
